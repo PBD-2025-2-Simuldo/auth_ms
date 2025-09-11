@@ -1,4 +1,3 @@
-# auth_ms/app/crud.py
 from sqlalchemy.orm import Session
 from app.models import User
 

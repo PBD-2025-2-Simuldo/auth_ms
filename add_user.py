@@ -1,10 +1,8 @@
-# auth_ms/add_user.py
 from app.database import SessionLocal, Base, engine
 from app.models import User
 from app.crud import create_user
 from app.auth_utils import get_password_hash
 
-# garante criação das tabelas (caso não existam)
 Base.metadata.create_all(bind=engine)
 
 def main():

@@ -1,11 +1,9 @@
-# auth_ms/app/auth_utils.py
 from passlib.context import CryptContext
 import jwt
 from datetime import datetime, timedelta
 from typing import Optional
 
-# SECRET - em produção use variável ambiente
-SECRET_KEY = "CHANGE_THIS_SECRET_KEY"  # troque por valor forte / usar env var
+SECRET_KEY = "CHANGE_THIS_SECRET_KEY"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60
 
@@ -28,6 +26,5 @@ def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -
     return encoded_jwt
 
 def decode_token(token: str) -> dict:
-    # jwt.decode levantará exceção se inválido ou expirado
     payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
     return payload

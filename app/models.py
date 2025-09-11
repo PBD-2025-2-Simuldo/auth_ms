@@ -6,4 +6,4 @@ class User(Base):
     id = Column(Integer, primary_key=True, index=True)
     nome = Column(String, nullable=False)
     username = Column(String, unique=True, index=True, nullable=False)
-    password = Column(String, nullable=False)  # hashed
+    password = Column(String, nullable=False)
